@@ -1,0 +1,6 @@
+{
+  "HI04": "1=Urban, 2=Rural",
+  "Conn_Grid": "Grid (C002) OR Mini-Grid (C041)",
+  "Hours": "C029B (Grid) or C070D (Mini)",
+  "Credit_Lift": "Data-driven absolute lift from Section H (Accept_Credit_Any - Accept_Cash)"
+}
