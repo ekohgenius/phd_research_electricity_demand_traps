@@ -307,4 +307,4 @@ Courage Ekoh
 Golisano Institute for Sustainability
 Rochester Institute of Technology
 
-Email: [add preferred email address]
+Email: ce8760@rit.edu
