@@ -18,11 +18,11 @@ The study develops an agent-based model of post-electrification electricity use 
 1. Grid hardening, which improves electricity service usability.
 2. Appliance financing, which relaxes liquidity constraints and supports movement into higher electricity-use capacity tiers.
 
-The analysis is calibrated primarily to the Rwanda Multi-Tier Framework (MTF) Energy Survey, 2022, and then applied comparatively to North-West Nigeria using the Nigeria Multi-Tier Framework (MTF) survey data.
+The analysis is calibrated primarily to the Rwanda Multi-Tier Framework (MTF) Energy Survey, 2022, and then applied comparatively to North-West Nigeria using Nigeria Multi-Tier Framework survey data.
 
 The main analysis file is:
 
-journal_paper.ipynb
+code/journal_paper.ipynb
 
 
 Repository structure
@@ -32,71 +32,94 @@ The repository is organized as follows:
 
 .
 ├── README.txt
-├── Dockerfile
-├── requirements.txt
-├── journal_paper.ipynb
-├── raw_data/
-│   └── README.txt
-├── created_csv_files/
-│   ├── abm_agents.csv
-│   ├── abm_inputs.csv
-│   ├── mtf_assumptions.json
-│   ├── rwanda_nigeria_comparison_table.csv
-│   ├── sector_aggregates.csv
-│   ├── supplement_S2_service_quality_grid_percent.csv
-│   ├── supplement_S2_service_quality_grid_raw.csv
-│   ├── supplement_S2_service_quality_summary.csv
-│   ├── supplement_S6_combined_scenarios_percent.csv
-│   ├── supplement_S6_combined_scenarios_raw.csv
-│   ├── supplement_S6_robustness_full_grid_percent.csv
-│   ├── supplement_S6_robustness_full_grid_raw.csv
-│   └── utility_baseline_2024.csv
-└── figures/
-    ├── fig1_rwanda_diagnostic.pdf
-    ├── fig1_rwanda_diagnostic.png
-    ├── fig2_rwanda_allocation.pdf
-    ├── fig2_rwanda_allocation.png
-    ├── fig3_state_dependence.pdf
-    ├── fig3_state_dependence.png
-    ├── fig4_dynamics.pdf
-    ├── fig4_dynamics.png
-    ├── fig5_robustness.pdf
-    ├── fig5_robustness.png
-    └── additional diagnostic and robustness figures
+├── code/
+│   └── journal_paper.ipynb
+├── data/
+│   ├── README.md
+│   ├── ng_weights.dta
+│   ├── raw-data_nigeria (2).zip
+│   ├── NGA_2018_MTF_v01_M_CSV.zip
+│   ├── NGA_2018_MTF_v01_M_CSV/
+│   │   ├── MTF_NG_HH_Identification.dta
+│   │   ├── MTF_NG_HH_SEC_B.dta
+│   │   ├── MTF_NG_HH_SEC_C.dta
+│   │   ├── MTF_NG_HH_SEC_K.dta
+│   │   ├── MTF_NG_HH_SEC_N_ELEC_ASSET.dta
+│   │   └── [other Nigeria MTF files]
+│   └── RWA_2022_MTF_v01_M_CSV/
+│       ├── household_survey_data/
+│       │   ├── ROSTER_A1.csv
+│       │   ├── SECTION_B.csv
+│       │   ├── SECTION_C1.csv
+│       │   ├── SECTION_DE.csv
+│       │   ├── SECTION_H.csv
+│       │   └── [other Rwanda MTF household files]
+│       └── community_and_public_institutions_surveys_data/
+│           └── [Rwanda community/public institution files]
+├── environment/
+│   ├── Dockerfile
+│   └── requirements.txt
+└── results/
+    ├── created_csv_files/
+    │   ├── abm_agents.csv
+    │   ├── abm_inputs.csv
+    │   ├── mtf_assumptions.json
+    │   ├── rwanda_nigeria_comparison_table.csv
+    │   ├── sector_aggregates.csv
+    │   ├── supplement_S2_service_quality_grid_percent.csv
+    │   ├── supplement_S2_service_quality_grid_raw.csv
+    │   ├── supplement_S2_service_quality_summary.csv
+    │   ├── supplement_S6_combined_scenarios_percent.csv
+    │   ├── supplement_S6_combined_scenarios_raw.csv
+    │   ├── supplement_S6_robustness_full_grid_percent.csv
+    │   ├── supplement_S6_robustness_full_grid_raw.csv
+    │   └── utility_baseline_2024.csv
+    └── figures/
+        ├── fig1_rwanda_diagnostic.pdf
+        ├── fig1_rwanda_diagnostic.png
+        ├── fig2_rwanda_allocation.pdf
+        ├── fig2_rwanda_allocation.png
+        ├── fig3_state_dependence.pdf
+        ├── fig3_state_dependence.png
+        ├── fig4_dynamics.pdf
+        ├── fig4_dynamics.png
+        ├── fig5_robustness.pdf
+        ├── fig5_robustness.png
+        └── [additional diagnostic and robustness figures]
 
 
 Main files
 ==========
 
-journal_paper.ipynb
--------------------
+code/journal_paper.ipynb
+------------------------
 
-This is the main notebook used to construct the household agents, run the model, generate the manuscript figures, and export supplementary tables.
+This is the main notebook used to construct household agents, run the model, generate the manuscript figures, and export supplementary tables.
 
-Dockerfile
-----------
+environment/Dockerfile
+----------------------
 
-The Dockerfile defines a reproducible Python environment for executing the notebook.
+This Dockerfile defines the reproducible execution environment.
 
-requirements.txt
-----------------
+environment/requirements.txt
+----------------------------
 
-This file lists the Python dependencies used in the project.
+This file lists the Python packages required to run the notebook.
 
-created_csv_files/
-------------------
+data/
+-----
+
+This folder contains or points to the raw input data required for the analysis. For public repositories, raw microdata should be excluded unless redistribution is clearly permitted by the relevant data license. See `data/README.md` for data access instructions.
+
+results/created_csv_files/
+--------------------------
 
 This folder contains generated CSV and JSON outputs used for diagnostics, manuscript tables, and supplementary information.
 
-figures/
---------
+results/figures/
+----------------
 
-This folder contains generated figures from the notebook, including the manuscript-ready figures in PDF and PNG formats.
-
-raw_data/
----------
-
-This folder is reserved for input data. Raw survey microdata are not included in this public repository. See `raw_data/README.txt` for instructions on obtaining and placing the required Rwanda and Nigeria MTF files.
+This folder contains generated figures, including manuscript-ready PDF and PNG files.
 
 
 Software requirements
@@ -112,54 +135,65 @@ The analysis uses Python with the following main packages:
 - nbconvert
 - ipykernel
 
-A minimal requirements file is provided as `requirements.txt`.
+The package list is provided in:
+
+environment/requirements.txt
 
 
 Running locally
 ===============
 
-To run the analysis locally:
+To run the analysis locally from the repository root:
 
-1. Install the dependencies:
+1. Install dependencies:
 
-   pip install -r requirements.txt
+   pip install -r environment/requirements.txt
 
-2. Download the required Rwanda and Nigeria MTF data following the instructions in:
+2. Confirm that the required input data are available in:
 
-   raw_data/README.txt
+   data/
 
-3. Place the required files in the expected folders inside `raw_data/`.
+3. Open the notebook:
 
-4. Open the notebook:
+   jupyter notebook code/journal_paper.ipynb
 
-   jupyter notebook journal_paper.ipynb
+4. Run all cells from top to bottom.
 
-5. Run all cells from top to bottom.
+5. Generated figures and tables should be written to:
 
-6. Generated figures and tables will be written to:
+   results/figures/
+   results/created_csv_files/
 
-   figures/
-   created_csv_files/
+
+Running from the command line
+=============================
+
+From the repository root, execute:
+
+jupyter nbconvert --to notebook --execute code/journal_paper.ipynb --output journal_paper_executed.ipynb
+
+Depending on the notebook’s internal paths, the executed notebook may be written to the current working directory or to the `code/` folder. If needed, update the notebook output paths before execution.
 
 
 Running with Docker
 ===================
 
-To build the Docker image:
+The Dockerfile is located in:
 
-docker build -t electrification-paper .
+environment/Dockerfile
 
-To execute the notebook:
+To build the Docker image from the repository root:
 
-docker run --rm -v "$PWD/created_csv_files:/app/created_csv_files" -v "$PWD/figures:/app/figures" electrification-paper
+docker build -f environment/Dockerfile -t electrification-paper .
 
-The Dockerfile is configured to execute:
+To run the notebook from the Docker container:
 
-journal_paper.ipynb
+docker run --rm \
+  -v "$PWD/data:/app/data" \
+  -v "$PWD/results:/app/results" \
+  electrification-paper
 
-using Jupyter nbconvert.
-
-If your notebook expects local data files, make sure the required data are present in `raw_data/` before running Docker.
+If your Dockerfile uses a different working directory or command, update the paths accordingly.
 
 
 Expected input data
@@ -170,13 +204,17 @@ The analysis expects two main data sources:
 1. Rwanda Multi-Tier Framework Energy Survey, 2022.
 2. Nigeria Multi-Tier Framework survey data for the North-West Nigeria sample.
 
-The Rwanda data are obtained from the World Bank Microdata Library and may require login. The Nigeria data are available through the World Bank Data Catalog and EnergyData.info. See `raw_data/README.txt` for details.
+The Rwanda data are obtained from the World Bank Microdata Library and may require login. The Nigeria data are available through the World Bank Data Catalog and EnergyData.info. The Nigeria household weights file used in the analysis is referenced as:
+
+data/ng_weights.dta
+
+See `data/README.md` for full details.
 
 
 Expected outputs
 ================
 
-The notebook produces the following types of outputs:
+The notebook produces:
 
 1. Household-agent construction files.
 2. Model-input summary files.
@@ -188,14 +226,14 @@ The notebook produces the following types of outputs:
 
 Examples of generated output files include:
 
-created_csv_files/rwanda_nigeria_comparison_table.csv
-created_csv_files/supplement_S2_service_quality_summary.csv
-created_csv_files/supplement_S6_robustness_full_grid_percent.csv
-figures/fig1_rwanda_diagnostic.pdf
-figures/fig2_rwanda_allocation.pdf
-figures/fig3_state_dependence.pdf
-figures/fig4_dynamics.pdf
-figures/fig5_robustness.pdf
+results/created_csv_files/rwanda_nigeria_comparison_table.csv
+results/created_csv_files/supplement_S2_service_quality_summary.csv
+results/created_csv_files/supplement_S6_robustness_full_grid_percent.csv
+results/figures/fig1_rwanda_diagnostic.pdf
+results/figures/fig2_rwanda_allocation.pdf
+results/figures/fig3_state_dependence.pdf
+results/figures/fig4_dynamics.pdf
+results/figures/fig5_robustness.pdf
 
 
 Model overview
@@ -277,7 +315,9 @@ No grid or mini-grid connection. Tier 0 households are excluded from the connect
 Data-use note
 =============
 
-Raw survey microdata are not included in this public repository. Users should obtain the input data directly from the original providers and comply with the relevant access terms and licenses.
+Raw survey microdata should not be redistributed in a public repository unless redistribution is clearly permitted by the relevant data license.
+
+The Rwanda MTF 2022 microdata are accessed through the World Bank Microdata Library and may require login. The Nigeria MTF data are available through the World Bank Data Catalog and EnergyData.info.
 
 This repository does not imply endorsement by the World Bank, EnergyData.info, or any other data provider. The original data collectors, authorized distributors, and funding agencies bear no responsibility for the analysis, interpretations, or conclusions presented in this project.
 
