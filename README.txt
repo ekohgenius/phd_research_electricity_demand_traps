@@ -335,7 +335,7 @@ Suggested citation
 
 If using this repository, please cite the associated manuscript:
 
-Ekoh, C., Batabyal, A. A., and Williams, N. J. Hardening Grids or Financing Demand? State-Dependent Electrification Strategies in Africa.
+Ekoh, C., Batabyal, A. A., and Williams, N. J. Optimal electrification strategies in Africa depend on baseline electricity service quality.
 
 Please also cite the original data sources used in any reproduction or extension of this analysis.
 
