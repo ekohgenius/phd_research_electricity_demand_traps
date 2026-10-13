@@ -35,28 +35,17 @@ Repository structure
 │   ├── Dockerfile
 │   └── requirements.txt
 └── results/
-    ├── source_data/        (per-figure source data; see below)
-    ├── created_csv_files/
-    │   ├── abm_agents.csv
-    │   ├── abm_inputs.csv
-    │   ├── mtf_assumptions.json
-    │   ├── rwanda_nigeria_comparison_table.csv
-    │   ├── sector_aggregates.csv
-    │   ├── supplement_S2_service_quality_grid_percent.csv
-    │   ├── supplement_S2_service_quality_grid_raw.csv
-    │   ├── supplement_S2_service_quality_summary.csv
-    │   ├── supplement_S6_combined_scenarios_percent.csv
-    │   ├── supplement_S6_combined_scenarios_raw.csv
-    │   ├── supplement_S6_robustness_full_grid_percent.csv
-    │   ├── supplement_S6_robustness_full_grid_raw.csv
-    │   └── utility_baseline_2024.csv
-    └── figures/
-        ├── fig1_rwanda_diagnostic.pdf / .png
-        ├── fig2_rwanda_allocation.pdf / .png
-        ├── fig3_state_dependence.pdf / .png
-        ├── fig4_dynamics.pdf / .png
-        ├── fig5_robustness.pdf / .png
-        └── [additional diagnostic and robustness figures]
+    ├── source_data/                      (source data for each main-text figure and Table 1; see below)
+    ├── fig1_rwanda_diagnostic.pdf / .png  ... fig5_robustness.pdf / .png   (main-text figures)
+    ├── fig_*.png, ng_fig_*.png            (diagnostic and supplementary figures)
+    ├── abm_inputs.csv                     (cluster-level model inputs)
+    ├── mtf_assumptions.json
+    ├── rwanda_nigeria_comparison_table.csv
+    ├── sector_aggregates.csv
+    ├── utility_baseline_2024.csv
+    ├── npv_grid_v2.csv                    (net-present-value robustness grid)
+    ├── supplement_S2_*.csv                (Supplementary Information S2)
+    └── supplement_S6_*.csv                (Supplementary Information S6)
 
 
 Source data for main figures
@@ -124,8 +113,8 @@ From the repository root:
 
 4. Figures and tables are written to:
 
-   results/figures/
-   results/created_csv_files/
+   results/
+   results/source_data/
 
 
 Running with Docker
