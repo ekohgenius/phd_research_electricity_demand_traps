@@ -1,0 +1,26 @@
+Tier,m_R_bin,hardening_dominance_share,cell_label,masked_low_n
+5,Very Low (<0.5),0.0,,True
+4,Very Low (<0.5),0.0,,True
+3,Very Low (<0.5),0.0,,True
+2,Very Low (<0.5),0.0,,True
+1,Very Low (<0.5),0.0,,True
+5,Low (0.5-0.7),0.0,,True
+4,Low (0.5-0.7),1.0,,True
+3,Low (0.5-0.7),0.0,,True
+2,Low (0.5-0.7),0.3943482031911346,,True
+1,Low (0.5-0.7),0.02898922241465479,3%,False
+5,Med (0.7-0.8),1.0,,True
+4,Med (0.7-0.8),0.2123318204408961,21%,False
+3,Med (0.7-0.8),0.0,,True
+2,Med (0.7-0.8),0.2959647736481569,30%,False
+1,Med (0.7-0.8),0.26817654196307894,27%,False
+5,High (0.8-0.9),1.0,,True
+4,High (0.8-0.9),0.078964836685554,8%,False
+3,High (0.8-0.9),0.0,,True
+2,High (0.8-0.9),0.2393227456479682,24%,False
+1,High (0.8-0.9),0.35144749657799257,35%,False
+5,Excellent (>0.9),0.21229867016273724,21%,False
+4,Excellent (>0.9),0.021713246420938397,2%,False
+3,Excellent (>0.9),0.0,0%,False
+2,Excellent (>0.9),0.10013396845953819,10%,False
+1,Excellent (>0.9),0.10113870233451948,10%,False

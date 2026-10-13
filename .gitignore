@@ -3,3 +3,6 @@
 # Raw survey microdata (not redistributed)
 data/*
 !data/README.md
+
+# Household-level derived data (not redistributed)
+results/abm_agents.csv
